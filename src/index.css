@@ -1,0 +1,176 @@
+body {
+  background-color: #778b5b;
+  font-family: 'Courier New', Courier, monospace;
+  color: #fff;
+  width: 98%;
+}
+
+.header {
+  border: 1px solid #ec6f4c;
+  margin: 1rem;
+  border-radius: .5rem;
+  background-color: #ec6f4c;
+}
+
+footer div{
+  display: flex;
+  flex-direction: row;  
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+font-size: 2.5rem;
+text-align: center;
+}
+
+form {
+  padding: 1rem;
+  border: 1px solid ;
+  margin: 1rem;
+  border-radius: .5rem;
+}
+
+.form-block{
+  display: flex;
+  flex-flow: wrap;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+#latitude-input, #longitude-input, #submit-button, #latitude-label, #logitude-label {
+margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+#postcode-input {
+  margin: 0.5rem;
+}
+
+button {
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  background-color: #ec6f4c;
+  border: #ec6f4c;
+  color: white;
+}
+
+.colour-accent{
+  color: #ec6f4c;
+}
+
+.weather-detail {
+  padding: 2rem;
+}
+
+#weather-icon{
+  grid-column: 2 / 2 ;
+  grid-row: 1/1;
+  border-radius: 0.6rem;
+  padding-left: 1.5rem;
+}
+
+#main-weather {
+  grid-column: 1 /1;
+  grid-row: 1/ 1;
+  font-size: larger;
+  font-weight: 600;
+}
+
+#description {
+  grid-row: 2 / 2;
+  grid-column: 1 /1 ;
+}
+
+.container {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  
+}
+/* .container:after{
+  content: "";
+    display: block;
+    clear: both;
+} */
+
+.leaflet-container {
+  width: 350px;
+  height: 350px;
+  border: 2px solid ;
+  border-radius: 0.6rem;
+  margin-top: 3rem;
+}
+
+.leaflet-tile {
+  filter: hue-rotate(45deg) !important;
+}
+
+.map-popup {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+hr {
+  width: 95%;
+}
+.forecast-header{
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #ec6f4c;
+  border-radius: 0.5rem;
+  background-color: #ec6f4c;
+  margin: 0 1rem 0 1rem;
+}
+
+.forecast-title {
+  text-align: left;
+  padding-left: 3rem;
+  padding-top: 2rem;
+}
+
+.forecast-container {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+}
+
+.forecast-list {
+  padding: 0.4rem;
+}
+
+.forecast-inner-container {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.forecast-titles {
+  padding: 1rem 0.6rem 0.8rem 1rem ;
+  padding-top: 1rem;
+  width: 45px;
+}
+.forecast-titles-time {
+  padding: 1rem;
+  padding-right: 4rem;
+  width: 45px;
+}
+
+.day-forecast-main {
+  text-align: center;
+  padding: 0.6rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(20%);
+  width: 62px;
+}
+
+.day-forecast {
+  text-align: center;
+  padding: 0.6rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(20%);
+  width: 50px;
+}
+
+footer {
+  padding: 2rem;
+}
