@@ -45,8 +45,8 @@ function ShowWeather ({newLatitude, newLongitude, city, setCity}) {
                     {weatherData.wind.gust ? <p>{`Wind gust: ${Math.round(weatherData.wind.gust)} m/s`} </p> : <></>}
                     <p>Cloud cover: {`${weatherData.clouds.all}%`}</p>
                     <p>Humidity:  {`${weatherData.main.humidity}%`}</p>
-                    <p>Sunrise: {`${getHrMinTimeStamp(weatherData.sys.sunrise)}`}</p>
-                    <p>Sunset: {`${getHrMinTimeStamp(weatherData.sys.sunset)}`} </p>
+                    <p>Sunrise: {`${getHrMinTimeStamp(weatherData.sys.sunrise + 3600)}`}</p>
+                    <p>Sunset: {`${getHrMinTimeStamp(weatherData.sys.sunset + 3600)}`} </p>
                 </div>
 
                 <div className="weather-detail">
