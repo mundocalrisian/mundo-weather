@@ -1,7 +1,6 @@
 import { getDayMonthStamp, getHrMinTimeStamp } from "../../utils/utils"
 import { ForecastCard, ForecastCardHeaders } from "./forecast-card"
 
-
 export function CurrentDayForecast ({newDayIndexes, forecastArray}){
     return (
     <>

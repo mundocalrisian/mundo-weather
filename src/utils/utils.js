@@ -4,11 +4,10 @@ import { useMap } from 'react-leaflet'
 
 export  function getHrMinTimeStamp(unixTimeStamp){
     const date = new Date(unixTimeStamp * 1000)
-    // Need to add something for the British Summer Time shift other than the -1 below
-    const hours = "0"+ (date.getHours()-1)
+    // Need to add something for the British Summer Time shift other than the -1 below here - 
+    const hours = "0"+ (date.getHours())
     const minutes = "0" + date.getMinutes()
     const formattedTime = `${hours.substr(-2)}:${minutes.substr(-2)}`
-    // console.log(formattedTime, "----formatted time");
     return formattedTime
 
 }
@@ -21,7 +20,6 @@ export function getDayMonthStamp(unixTimeStamp){
   const date = completeDate.getDate()
   const month = monthArray[completeDate.getMonth()]
   const formattedDate = `${weekDay} ${date} ${month}`
-  // console.log(formattedDate, '-----formatted date');
   return formattedDate
 
 }

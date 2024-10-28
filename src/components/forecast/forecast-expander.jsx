@@ -1,7 +1,6 @@
 import { useState } from "react"
 import ForecastHeader from "../weather/weather-header"
 
-
 export default function Expander ({children}) {
     const [isVisible, setIsVisible] = useState(true)
     const city = children.props.city
@@ -19,7 +18,6 @@ export default function Expander ({children}) {
             return null
         }
     }
-
 
     return (
         <div>

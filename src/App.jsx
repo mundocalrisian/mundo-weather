@@ -13,10 +13,6 @@ function App() {
   const [postCode, setPostCode] = useState("LS1 1BA")
   const [city, setCity] = useState("Leeds")
 
-// console.log(newLatitude, "---newlat in app");
-// console.log(newLongitude, "-----newlong in app");
-// console.log(postCode, "-----newPostCode in app");
-
   return (
     <section id="App">
       <Header />
