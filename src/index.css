@@ -174,3 +174,53 @@ hr {
 footer {
   padding: 2rem;
 }
+
+.current-location-icon {
+  width: 1.2rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  filter: invert(98%) sepia(0%) saturate(6%) hue-rotate(116deg) brightness(100%) contrast(104%);
+}
+
+.location-loading {
+  width: 1.2rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.location-error {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: solid;
+  border-radius: 0.5rem;
+  border-color: #ec6f4c;
+  background-color: #ec6f4c;
+  text-align: center;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.location-error-text {
+  font-weight: 400;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.location-error-icon {
+  width: 25px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.2rem;
+  vertical-align: middle;
+  filter: invert(98%) sepia(0%) saturate(6%) hue-rotate(116deg) brightness(100%) contrast(104%);
+}
+
+.check-icon {
+  width: 1.2rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  filter: invert(98%) sepia(0%) saturate(6%) hue-rotate(116deg) brightness(100%) contrast(104%);
+}
