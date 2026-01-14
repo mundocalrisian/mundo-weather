@@ -18,6 +18,7 @@ function Search ({setNewLatitude, setNewLongitude, setPostCode, setCity}) {
         event.preventDefault()
 
         if (tempPostCode){
+        setCalcualtingLocation(true);
         coordinatesFromPostcode(tempPostCode)
         .then((response) => {
             const latitude = response.data.results[0].lat
@@ -27,7 +28,9 @@ function Search ({setNewLatitude, setNewLongitude, setPostCode, setCity}) {
             setPostCode(tempPostCode)
             // postcodeFromCoordinates(latitude, longitude)
             // .then((result) => setCity(result.data.results[0].city))
-            setTempPostCode("")
+            setTempPostCode("");
+            setError("");
+            setCalcualtingLocation(false);
         })
         } 
         if (tempLatitude && tempLongitude){
