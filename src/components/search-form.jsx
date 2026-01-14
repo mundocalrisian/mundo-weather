@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { coordinatesFromPostcode, postcodeFromCoordinates } from "../utils/api";
+import loadingSpinner from "../assets/loading-spinner.svg"
+import errorIcon from "../assets/alert-error.svg"
+import currentLocationIcon from "../assets/current-location.svg"
+import checkIcon from "../assets/check.svg"
 
 
 function Search ({setNewLatitude, setNewLongitude, setPostCode, setCity}) {
