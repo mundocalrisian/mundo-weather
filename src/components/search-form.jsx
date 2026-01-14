@@ -7,9 +7,12 @@ import checkIcon from "../assets/check.svg"
 
 
 function Search ({setNewLatitude, setNewLongitude, setPostCode, setCity}) {
-    const [tempLatitude, setTempLatitude] = useState("")
-    const [tempLongitude, setTempLongitude] = useState("")
-    const [tempPostCode, setTempPostCode] = useState("")
+    const [tempLatitude, setTempLatitude] = useState("");
+    const [tempLongitude, setTempLongitude] = useState("");
+    const [tempPostCode, setTempPostCode] = useState("");
+    const [retreivingUserLocation, setRetreivingUserLocation] = useState(false);
+    const [calcualtingLocation, setCalcualtingLocation] = useState(false);
+    const [error, setError] = useState(null);
 
     const handleSubmit = (event) => {
         event.preventDefault()
