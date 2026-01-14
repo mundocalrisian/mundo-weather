@@ -97,15 +97,13 @@ function Search ({setNewLatitude, setNewLongitude, setPostCode, setCity}) {
                     setTempLongitude(event.target.value);
                 }}/>
             </div>
-            <div>
-                <p>Alternatively, please enter a UK postcode </p>
-                <label htmlFor="postcode-input">Postcode</label>
-                <input value={tempPostCode} type="text" id="postcode-input" onChange={(event) => {
-                setTempPostCode(event.target.value)
-                }}/>
-            </div>
             <div id="search-submit-button">
-                <button type="submit" id="submit-button">Submit</button>
+                <button type="submit" id="submit-button">
+                    Submit
+                    {calcualtingLocation? 
+                    <img src={loadingSpinner} alt="a spinning sun" className="location-loading"/>: 
+                    <img src={checkIcon} className="check-icon"/>}
+                </button>
             </div>
         </form>
     )
