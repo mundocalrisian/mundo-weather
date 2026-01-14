@@ -50,6 +50,37 @@ function Search ({setNewLatitude, setNewLongitude, setPostCode, setCity}) {
         }
     }
 
+    const getLocation = () => {
+        setRetreivingUserLocation(true);
+        
+        if (!navigator.geolocation) {
+        setError("Geolocation is not supported by your browser");
+        setRetreivingUserLocation(false);
+        return;
+        }
+
+        navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError, options);
+    }
+
+    function getLocationSuccess(position) {
+        setNewLatitude(position.coords.latitude);
+        setNewLongitude(position.coords.longitude);
+        setError("");
+        setRetreivingUserLocation(false);
+    }
+
+    function getLocationError(error) {
+        setError(error.message);
+        setRetreivingUserLocation(false);
+        console.log('Whoops, an error occurred - ', error);
+    }
+
+    const options = {
+        enableHighAccuracy: false,
+        timeout: 5000,
+        maximumAge: 0,
+    };
+
     return(
         <form onSubmit={(event)=>{handleSubmit(event)}}>
             <div className="form-header">
