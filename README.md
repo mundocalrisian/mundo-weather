@@ -23,7 +23,12 @@ I chose to use [Open Weather Map](https://openweathermap.org/api) and [Geoapify]
 
 ## Resources
 
+### Fonts
 - [Google Fonts](https://fonts.google.com/)
+### Icons
 - [ICONS8](https://icons8.com/)
+- [SVG Repo](https://www.svgrepo.com/)
+- [Current location icon by Cube29 on IconScout](https://iconscout.com/icons/current-location)
+- [Check approve icon by Irdat Purwadi on IconScout](https://iconscout.com/icons/check-approve)
 
 
