@@ -34,16 +34,19 @@ function Search ({setNewLatitude, setNewLongitude, setPostCode, setCity}) {
         })
         } 
         if (tempLatitude && tempLongitude){
-            setNewLatitude(tempLatitude)
-            setNewLongitude(tempLongitude)
+            setCalcualtingLocation(true);
+            setNewLatitude(tempLatitude);
+            setNewLongitude(tempLongitude);
             postcodeFromCoordinates(tempLatitude, tempLongitude)
             .then((result) => {
                 // setCity(result.data.results[0].city)
                 setPostCode(result.data.results[0].postcode)
-                })
-            setTempLatitude("")
-            setTempLongitude("")
-            setTempPostCode("")
+                });
+            setTempLatitude("");
+            setTempLongitude("");
+            setTempPostCode("");
+            setError("");
+            setCalcualtingLocation(false);
         }
     }
 
