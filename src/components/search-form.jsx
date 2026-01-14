@@ -85,7 +85,32 @@ function Search ({setNewLatitude, setNewLongitude, setPostCode, setCity}) {
         <form onSubmit={(event)=>{handleSubmit(event)}}>
             <div className="form-header">
                 <h2>Welcome to Mundo Weather!</h2>
-                <p>Please input the latitude and longitude below to receive the current weather for that location</p>
+                <p>To receive the weather for your location, please click the button below:</p>
+            </div>
+            <div>
+                <button onClick={getLocation} id="get-location-button">
+                    Use My Location 
+                    {retreivingUserLocation? 
+                    <img src={loadingSpinner} alt="a spinning sun" className="location-loading"/>:
+                    <img src={currentLocationIcon} className="current-location-icon"/>
+                    }
+                </button>
+            </div>
+                {error ? <div id="location-error" className="location-error">
+                <img src={errorIcon} className="location-error-icon"/>
+                <p className="location-error-text">
+                    Whoops! Something went wrong when trying to find your location. 
+                </p>
+                <p className="location-error-text">
+                    Please try again or use a different option below.
+                </p>
+            </div>: <></>}
+            <div>
+                <p>Alternatively, please enter either a UK post code or a latitude and longitude:</p>
+                <label htmlFor="postcode-input">Postcode</label>
+                <input value={tempPostCode} type="text" id="postcode-input" onChange={(event) => {
+                setTempPostCode(event.target.value)
+                }}/>
             </div>
             <div className="form-block">
                 <label htmlFor="latitude-input" id="latitude-label">Latitude</label>
