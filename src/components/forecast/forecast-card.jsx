@@ -1,13 +1,13 @@
 import { getHrMinTimeStamp, tempKelvinToCelsius, windDirection } from "../../utils/utils";
 
-export function ForecastCard ({element}) {
+export function ForecastCard ({forecastDetail}) {
     return (
     <div className="forecast-inner-container">
-        <div className="day-forecast">{getHrMinTimeStamp(element.dt)}</div>
-        <img  className="day-forecast-img" src={`https://openweathermap.org/img/wn/${element.weather[0].icon}.png`} alt="" />
-        <div className="day-forecast-main">{element.weather[0].main}</div>
-        <div className="day-forecast">{`${tempKelvinToCelsius(element.main.temp)}ºC`}</div>
-        <div className="day-forecast">{`${Math.round(element.wind.speed)}, ${windDirection(element.wind.deg)}`}</div>
+        <div className="day-forecast">{getHrMinTimeStamp(forecastDetail.dt)}</div>
+        <img  className="day-forecast-img" src={`https://openweathermap.org/img/wn/${forecastDetail.weather[0].icon}.png`} alt="" />
+        <div className="day-forecast-main">{forecastDetail.weather[0].main}</div>
+        <div className="day-forecast">{`${tempKelvinToCelsius(forecastDetail.main.temp)}ºC`}</div>
+        <div className="day-forecast">{`${Math.round(forecastDetail.wind.speed)}, ${windDirection(forecastDetail.wind.deg)}`}</div>
     </div>)
 }
 
