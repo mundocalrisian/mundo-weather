@@ -12,23 +12,16 @@ describe('tempKelvinToCelsius', () => {
 
 describe('getHrMinTimeStamp', () => {
     describe('when given unix timestamp', () => {
-        it('should convert to the correct hour and minute', () => {
+        it('should convert winter UTC time to Europe/London local time', () => {
+            expect(getHrMinTimeStamp(1672576200, 'en-GB', 'Europe/London')).toBe('12:30');
+        });
 
-            const mockDate = new Date('2023-01-01T12:30:00Z');
-            jest.spyOn(global, 'Date').mockImplementation(() => mockDate);
-
-            expect(getHrMinTimeStamp(1672576200)).toBe('12:30'); // 1672576200 is 2023-01-01T12:30:00Z
-
-            jest.restoreAllMocks();
+        it('should convert summer UTC time to UTC time', () => {
+            expect(getHrMinTimeStamp(1680352200, 'en-GB', 'UTC')).toBe('12:30');
         });
 
         it('should pad single digit hours and minutes', () => {
-            const mockDate = new Date('2023-01-01T05:03:00Z');
-            jest.spyOn(global, 'Date').mockImplementation(() => mockDate);
-
-            expect(getHrMinTimeStamp(1672556580)).toBe('05:03');
-
-            jest.restoreAllMocks();
+            expect(getHrMinTimeStamp(1672549380, 'en-GB', 'UTC')).toBe('05:03');
         });
     });
 });
@@ -36,21 +29,11 @@ describe('getHrMinTimeStamp', () => {
 describe('getDayMonthStamp', () => {
     describe('when given unix timestamp', () => {
         it('should convert to the correct day and month', () => {
-            const mockDate = new Date('2023-01-01T00:00:00Z'); // Sunday
-            jest.spyOn(global, 'Date').mockImplementation(() => mockDate);
-
-            expect(getDayMonthStamp(1672531200)).toBe('Sunday 1 January');
-
-            jest.restoreAllMocks();
+            expect(getDayMonthStamp(1672531200, 'en-GB', 'Europe/London')).toBe('Sunday, 1 January');
         });
 
         it('should handle different months and days', () => {
-            const mockDate = new Date('2023-07-15T00:00:00Z'); // Saturday
-            jest.spyOn(global, 'Date').mockImplementation(() => mockDate);
-
-            expect(getDayMonthStamp(1689379200)).toBe('Saturday 15 July');
-
-            jest.restoreAllMocks();
+            expect(getDayMonthStamp(1689379200, 'en-GB', 'Europe/London')).toBe('Saturday, 15 July');
         });
     });
 });
