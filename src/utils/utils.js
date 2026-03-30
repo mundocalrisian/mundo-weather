@@ -1,27 +1,33 @@
 import { useEffect } from 'react'
 import { useMap } from 'react-leaflet'
 
-
-export  function getHrMinTimeStamp(unixTimeStamp){
+function formatDateTime(unixTimeStamp, options, locale = 'en-GB', timeZone) {
     const date = new Date(unixTimeStamp * 1000)
-    // Need to add something for the British Summer Time shift other than the -1 below here - 
-    const hours = "0"+ (date.getHours())
-    const minutes = "0" + date.getMinutes()
-    const formattedTime = `${hours.substr(-2)}:${minutes.substr(-2)}`
-    return formattedTime
-
+    return new Intl.DateTimeFormat(locale, { ...options, timeZone }).format(date)
 }
 
-export function getDayMonthStamp(unixTimeStamp){
-  const monthArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  const weekdayArray = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-  const completeDate = new Date(unixTimeStamp * 1000)
-  const weekDay = weekdayArray[completeDate.getUTCDay()]
-  const date = completeDate.getDate()
-  const month = monthArray[completeDate.getMonth()]
-  const formattedDate = `${weekDay} ${date} ${month}`
-  return formattedDate
+export function getLocalDayString(unixTimeStamp, locale = 'en-GB', timeZone = 'Europe/London'){
+    return formatDateTime(unixTimeStamp, {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+    }, locale, timeZone)
+}
 
+export function getHrMinTimeStamp(unixTimeStamp, locale = 'en-GB', timeZone = 'UTC'){
+    return formatDateTime(unixTimeStamp, {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+    }, locale, timeZone)
+}
+
+export function getDayMonthStamp(unixTimeStamp, locale = 'en-GB', timeZone = 'Europe/London'){
+    return formatDateTime(unixTimeStamp, {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+    }, locale, timeZone)
 }
 
 export function tempKelvinToCelsius (temp) {
